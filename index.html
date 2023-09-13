@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhruv - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script defer src = "app.js"></script>
+    
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="left">Dhruv's Portfolio</div>
+        <div class="right">
+          <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#project">Projects</a></li>
+            <i class="fas fa-times"></i>
+          </ul>
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div id="Home">
+        <section class="firstsection">
+          <div class="leftsection">
+            My Name is
+            <span id="element"></span>
+            <div class="buttons">
+              <button class="btn" onclick="alert('No Resume Found')">Download Resume</button>
+              <button class="btn" onclick="window.location.href='https://github.com/dhruvarora23'">Github Profile</button>
+            </div>
+          </div>
+          <div class="rightsection">
+            <img src="bg.png" alt="" />
+          </div>
+        </section>
+      </div>
+
+
+
+      <div id="About">
+        <hr>
+        <section class="secondsection">
+          <div class="container">
+            <div class="row">
+              <div class="about-col1">
+                <img src="MyPicture1.jpg" class="hidden">
+              </div>
+              <div class="about-col2">
+                <h1>About Me</h1>
+                <p class="aboutme">
+                  I am a 2nd Year Engineering Student at Thapar Institute of
+                  Technology. I am currently learning Web Development, Machine
+                  Learning. Very motivated, passionate and learning new technologies.
+                  Highly organized and responsible with strong communication and
+                  critical thinking skills.
+                </p>
+
+                <div class="tab-titles">
+                  <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                  <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id = "skills">
+                  <ul>
+                    <li><span>Web Development</span><br>Technologies Used: HTML, CSS, JS, MongoDB, Node.js, React.js</li>
+                    <li><span>Languages</span><br>C, C++, Python</li>
+                    <li><span>Other Softwares</span><br>MySQL, Unity (Game Dev), CSV Files</li>
+                  </ul>
+                </div>
+                <div class="tab-contents" id = "education">
+                  <ul>
+                    <li><span>2026</span><br>Btech in CS - Thapar Institute of Technology, Patiala</li>
+                    <li><span>2022</span><br>XII Grade - Manav Rachna International School, Faridabad</li>
+                    <li><span>2020</span><br>X Grade - Sir William Borlase Grammar School, Marlow, UK</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr>
+      </div>
+
+
+
+      <div id="project">
+        <section class="thirdsection">
+          <div class="container">
+            <h1>My Projects</h1>
+            <div class="service-list">
+              <div class = "hidden">
+                <h2>E-commerce Website</h2>
+                <p>
+                  A full-stack project utilizing the latest technology stack like <b>HTML, JS, Bootstrap, React, MongoDB</b>.
+                  Deployed using <b>Vercel</b>.
+                </p>
+                <ul>
+                  <li><a href=" https://tss-react-ecommerce-six.vercel.app">Live Deployment</a></li>
+                </ul>
+              </div>
+              <div class = "hidden">
+                <h2>Blogging Webpage</h2>
+                <p>
+                  A Blog Web page developed using the latest technology like <b>HMTL, JS and Next.js.</b> Deployed on <b>Vercel</b>.
+                </p>
+                <ul>
+                  <li><a href="https://blog-webpage-rho.vercel.app">Live Deployment</a></li>
+                </ul>
+
+              </div>
+              <div class = "hidden">
+                <h2>Portfolio Website</h2>
+                <p>
+                  This portfolio website made using <b>HTML, CSS and Bootstrap.</b>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-first">
+          <h3>Dhruv's Portfolio</h3>
+        </div>
+        <div class="footer-second">
+          <ul>
+            <li><a href="https://www.github.com/dhruvarora23">Github</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/dhruvarora23">Linkedin</a>
+            </li>
+            <li>Email: dhruvarora2309@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Dhruv Arora"],
+        typeSpeed: 50,
+      });
+    </script>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+      function opentab(tabname){
+        for(tablink of tablinks){
+          tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+  </body>
+</html>
